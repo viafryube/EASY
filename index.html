@@ -28,51 +28,69 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    /* Warna background tombol prev/next */
-    .carousel-control-prev-icon,
+        .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      background-color: gray;     /* warna abu */
-      border-radius: 50%;         /* biar lebih rapi */
+      background-color: gray;
+      border-radius: 50%;
       width: 40px;
       height: 40px;
       background-size: 60%;
     }
 
-    /* Hilangkan transparansi default */
     .carousel-control-prev,
     .carousel-control-next {
       opacity: 1;
     }
 
+    /* Atur gambar */
     .details img {
-      max-height: 260px;   /* gambar lebih ramping */
+      max-height: 260px;
       width: auto;
       object-fit: contain;
       margin: 0 auto;
       display: block;
     }
 
-    /* MOBILE: hanya 1 item per slide */
-    @media (max-width: 768px) {
+    /* --- RESPONSIVE BREAKPOINTS --- */
 
-      /* Biar tiap slide hanya tampil 1 item */
+    /* MOBILE: tampil 1 item */
+    @media (max-width: 576px) {
       #perangkatCarousel .carousel-item .col-lg-4 {
         flex: 0 0 100%;
         max-width: 100%;
       }
 
-      /* Biar kartunya full & rapi di tengah */
       #perangkatCarousel .pricing-item {
         width: 90%;
         margin: 0 auto;
       }
 
-      /* Hapus row agar tidak memaksa 3 item */
       #perangkatCarousel .row {
-        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 12px;
       }
     }
 
+    /* TABLET: tampil 2 item */
+    @media (min-width: 577px) and (max-width: 991px) {
+      #perangkatCarousel .carousel-item .col-lg-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      #perangkatCarousel .row {
+        justify-content: center;
+        gap: 15px;
+      }
+    }
+
+    /* DESKTOP: tetap 3 item */
+    @media (min-width: 992px) {
+      #perangkatCarousel .carousel-item .col-lg-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+      }
+    }
   </style>
 </head>
 
